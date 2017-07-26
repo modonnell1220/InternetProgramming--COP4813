@@ -1,7 +1,0 @@
-Create Table Accounts
-(
-	Username varchar(50) Not Null,
-	Password varchar(50),
-	Email varchar (320),
-	PRIMARY KEY(Username)
-);
