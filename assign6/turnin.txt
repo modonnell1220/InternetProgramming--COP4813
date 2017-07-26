@@ -1,0 +1,6 @@
+http://139.62.210.151/~n00939851/cop4813/assign6/index.php
+
+In order to combat sql injection, the function mysql_real_escape_string()
+was used with all 6 variables containing information when added via the
+forms. So any special characters that would have been added into the form in 
+order to perform sql injection would be escaped with backslash \.

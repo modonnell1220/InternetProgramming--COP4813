@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Assignment 3</title>
+    <link rel="stylesheet" href="../style.css"><link href="https://fonts.googleapis.com/css?family=Abel|Roboto" rel="stylesheet">
+    
+    <script src="Statistics.js"></script>
+    <script>
+        function getStats()
+        {
+            var myNums = document.getElementById("input").value;
+            
+            //fix input to be in proper format
+            myNums = myNums.trim();
+            while (myNums.includes("  ") == true)
+            {
+                myNums = myNums.replace("  ", " ");
+            }
+            
+            var numArray = myNums.split(" ");
+            for(var i = 0; i < numArray.length; ++i)
+            {
+                numArray[i] = parseInt(numArray[i], 10);
+            }
+            document.getElementById("number").value = findN(numArray);
+            document.getElementById("summation").value = findSum(numArray);
+            document.getElementById("mean").value = findMean(numArray);
+            document.getElementById("median").value = findMedian(numArray);
+            document.getElementById("mode").value = findMode(numArray);
+            document.getElementById("variance").value = findVariance(numArray);
+            document.getElementById("stddev").value = findStandardDeviation(numArray);
+        }
+    </script>
+                
+</head>
+<body>
+    <header>
+        <h1>Assignment 3: Statistics</h1>
+    </header>
+    <div class="main"> 
+        <h3>Do Some Stats!</h3>
+        <hr>
+        <div class="mid">
+            <form name="data">
+                <p>Input Numbers (separated by a space): &nbsp &nbsp <input type="text" id="input" size=45px autofocus></p>
+                <p><input type="button" value="Get Statistics" onClick="getStats()" class="button"></p>
+            </form>
+            <hr>
+            <form>
+            <div class="form-3">
+                <span class="title-3">Number: </span><input type="text" id="number"></div>
+            <div class="form-3">
+                <span class="title-3">Summation: </span><input type="text" id="summation"></div>
+            <div class="form-3">
+                <span class="title-3">Mean: </span><input type="text" id="mean"></div>
+            <div class="form-3">
+                <span class="title-3">Median: </span><input type="text" id="median"></div>
+            <div class="form-3">
+                <span class="title-3">Mode: </span><input type="text" id="mode"></div>
+            <div class="form-3">
+                <span class="title-3">Variance: </span><input type="text" id="variance"></div>
+            <div class="form-3">
+                <span class="title-3">Standard Deviation: </span><input type="text" id="stddev"></div>
+            </form>
+        </div>
+        <hr>
+    <p align="left"><a href="../index.html" id="goback">Go Back</a> &nbsp &nbsp &nbsp <a href="unittests.html" target="_blank">Link to the Unit Tests</a></p>
+    </div>
+    
+</body>
+</html>

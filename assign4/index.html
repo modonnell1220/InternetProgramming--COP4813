@@ -1,0 +1,138 @@
+<html>
+<head>
+    <title>Assignment 4</title>
+    <link rel="stylesheet" href="../style.css"><link href="https://fonts.googleapis.com/css?family=Abel|Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#start").click(function(){
+                $("#indicator").html("Getting data for user");
+                $("#indicator").css({'border': 'solid 1px black'});
+                $("#arrow-down").fadeIn();
+                $("#indicator").animate({top: '220px'}, 1000,function(){
+                    $("#arrow-down").fadeOut();
+                    $("#arrow-down1").fadeIn();
+                    $("#indicator").animate({top: '325px'}, 1000, function(){
+                        $("#arrow-down1").fadeOut();
+                        $("#arrow-down2").fadeIn();
+                        $("#indicator").animate({top: '475px'}, 1000, function(){
+                            $("#indicator").html("Data retrieved");
+                            $("#indicator").css({'border': 'solid 2px green'});
+                            $("#indicator").animate({top: '475px'}, 2000, function(){
+                                $("#arrow-down2").fadeOut();
+                                $("#indicator").animate({top: '475px'}, 1000, function(){
+                                    $("#arrow-down2").css({'border-left': '20px solid transparent', 'border-right': '20px solid transparent', 'border-top': 0, 'border-bottom': '20px solid #f00'});
+                                    $("#arrow-down1").css({'border-left': '20px solid transparent', 'border-right': '20px solid transparent', 'border-top': 0, 'border-bottom': '20px solid #f00'});
+                                    $("#arrow-down").css({'border-left': '20px solid transparent', 'border-right': '20px solid transparent', 'border-top': 0, 'border-bottom': '20px solid #f00'});
+                                    $("#arrow-down2").fadeIn();
+                                    $("#indicator").animate({top: '315px'}, 1000, function(){
+                                        $("#arrow-down2").fadeOut();
+                                        $("#arrow-down1").fadeIn(); 
+                                        $("#indicator").animate({top: '200px'}, 1000, function(){
+                                            $("#arrow-down1").fadeOut();
+                                            $("#arrow-down").fadeIn(); 
+                                            $("#indicator").animate({top: '80px'}, 1000, function(){
+                                                $("#arrow-down").fadeOut();
+                                                $("#indicator").html("Data returned to user");
+                                                $("#arrow-down2").css({'border-left': '20px solid transparent', 'border-right': '20px solid transparent', 'border-top': '20px solid #f00', 'border-bottom': 0});
+                                                $("#arrow-down1").css({'border-left': '20px solid transparent', 'border-right': '20px solid transparent', 'border-top': '20px solid #f00', 'border-bottom': 0});
+                                                $("#arrow-down").css({'border-left': '20px solid transparent', 'border-right': '20px solid transparent', 'border-top': '20px solid #f00', 'border-bottom': 0});
+                                            });
+                                            
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    </script> 
+    <style>
+        #indicator {
+            font-family: Roboto, serif;
+            top: 80px;
+            padding: 20px;
+            max-width: 5%;
+            text-align: center;
+            background-color: white;
+            border: solid 1px black;
+            border-radius: 10px;
+            margin: 0 95;
+            display: inline-block;
+            position: relative;
+        }  
+        #dbms {
+            font-family: Roboto, serif;
+            padding: 10px 10px 15px;
+            max-width: 30%;
+            text-align: center;
+            background-color: skyblue;
+            border: solid 1px #ffffff;
+            margin:  auto;
+            display: block;
+        }  
+        #file-manager {
+            font-family: Roboto, serif;
+            padding: 15px 10px 15px;
+            max-width: 30%;
+            text-align: center;
+            background-color: aquamarine;
+            border: solid 1px #ffffff;
+            margin: 0 auto;
+        }  
+        #disk-manager {
+            font-family: Roboto, serif;
+            padding: 15px 10px 15px;
+            max-width: 30%;
+            text-align: center;
+            background-color: palevioletred;
+            border: solid 1px #ffffff;
+            margin: 0 auto;
+        }
+        #stored-data {
+            font-family: Roboto, serif;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            font-size: 18px;
+            color: black;
+            line-height: 130px;
+            text-align: center;
+            background: lightgrey;
+            margin: 0 auto;
+        }
+        #arrow-down, #arrow-down1, #arrow-down2 {
+            width: 0; 
+            height: 0; 
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #f00;
+            margin: 0 auto;
+            display: none;
+        }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Assignment 4: Animation</h1>
+    </header>
+    <div class="main"> 
+        <p align="center">This represents the procress of data access, locating a specific piece of data in the database and presenting it to the user through distinct layers of software. <br><br><input id="start" type="button" value="Start Animation" class="button4"></p>
+        <div class="mid">
+            <div id="indicator" align="left">Getting data for user</div><div id="dbms">DBMS<br>(Database Management System)</div><br><br>
+            <div id="arrow-down"></div><br>
+            <div id="file-manager">File<br>Manager</div><br>
+            <div id="arrow-down1"></div><br>
+            <div id="disk-manager">Disk<br>Manager</div><br>
+            <div id="arrow-down2"></div><br>
+            <div id="stored-data">Stored Database</div>       
+            
+            
+        </div>
+        <hr>
+        <p align="left"><a href="../index.html" id="goback">Go Back</a></p>
+    </div>
+</body>
+</html>

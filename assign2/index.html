@@ -1,0 +1,168 @@
+<html>
+<head>
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="../style.css"><link href="https://fonts.googleapis.com/css?family=Abel|Roboto" rel="stylesheet">
+    
+    <script>        
+        function coolness()
+        {
+            var name = document.getElementById("name").value;
+            var age = document.data.age.options[document.data.age.selectedIndex].value;
+            var hobby1 = document.getElementById("paint").checked;
+            var hobby2 = document.getElementById("grass").checked;
+            var hobby3 = document.getElementById("water").checked;
+            var hobby4 = document.getElementById("bath").checked;
+            var selectedhobby;
+            var check1 = document.getElementById("home").checked;
+            var check2 = document.getElementById("school").checked;
+            var check3 = document.getElementById("sleeping").checked;
+            var output;
+            
+            if(name.length == 0)
+            {
+                output = "***** Please enter your name *****";
+                document.getElementById("output").innerHTML = output;
+                return;
+            }            
+            if(hobby1 == false && hobby2 == false && hobby3 == false && hobby4 == false)
+            {
+                output = "***** Please select what you like to do *****";
+                document.getElementById("output").innerHTML = output;
+                return;       
+            }
+            else
+            {
+                if(hobby1)
+                {
+                    selectedhobby = "1";
+                }
+                if(hobby2)
+                {
+                    selectedhobby = "2";
+                }
+                if(hobby3)
+                {
+                    selectedhobby = "3";
+                }
+                if(hobby4)
+                {
+                    selectedhobby = "4";
+                }
+            }
+            
+            if (age == 0)
+            {
+                output = "Huh!? If you're 0 years old, how'd you get here?";
+                document.getElementById("output").innerHTML = output;
+                return; 
+            }
+            else if (1<= age && age <= 12)
+            {
+                if(selectedhobby == "1" || selectedhobby == "2" || selectedhobby == "3" )
+                {
+                    output = name + ", you're not cool at all. You probably needed your parents permission to get online, didn't you?";
+                    document.getElementById("output").innerHTML = output;
+                    return;  
+                }
+                else 
+                {
+                    if(check1 == true && check2 == true && check3 == true)
+                    {
+                        output = name + ", you're pretty cool!";
+                        document.getElementById("output").innerHTML = output;
+                        return; 
+                    }
+                    else if(check1 == false && check2 == false && check3 == false)
+                    {
+                        output = name + ", if you're not cool anywhere, then you're just not cool at all.";
+                        document.getElementById("output").innerHTML = output;
+                        return; 
+                    }
+                    else
+                    {
+                        output = name + ", you're kinda cool, but not super cool.";
+                        document.getElementById("output").innerHTML = output;
+                        return; 
+                    }
+                }
+            }
+            else
+            {
+                if(selectedhobby == "1" || selectedhobby == "2")
+                {
+                    output = name + ", you're not very cool.";
+                    document.getElementById("output").innerHTML = output;
+                    return;  
+                }
+                else if (selectedhobby == "3")
+                {
+                    output = name + ", watching water evaporate is kinda cool, if it's boiling. Doesn't really make you cool, though.";
+                    document.getElementById("output").innerHTML = output;
+                    return; 
+                }
+                else
+                {
+                    if(check1 == true && check2 == true && check3 == true)
+                    {
+                        output = "WHOA!!! " + name + ", you're the coolest!";
+                        document.getElementById("output").innerHTML = output;
+                        return; 
+                    }
+                    else if(check1 == false && check2 == false && check3 == false)
+                    {
+                        output = name + ", how can you think you're cool if you're not cool anywhere?.";
+                        document.getElementById("output").innerHTML = output;
+                        return; 
+                    }
+                    else
+                    {
+                        output = name + ", you're cool, but not amazingly cool.";
+                        document.getElementById("output").innerHTML = output;
+                        return; 
+                    }
+                }                
+            }
+        } //end of function coolness
+    </script>
+    
+</head>
+<body>
+<header>
+        <h1>Assignment 2: The Cool Test</h1>
+</header>
+    <div class="main"> 
+        <h3>How cool are you?</h3>
+        <p>Fill out the form to find out!</p>
+        <hr>
+        <div class="mid">
+            <form name="data">
+                <p><u>Name:</u> <input type="text" id="name" autofocus></p>
+                <p><u>Age:</u> <select name="age" id="age">
+                        <script>
+                            for (j = 0; j <=100; j++)
+                            {
+                                document.write("<option value='" + j + "'>" + j)
+                            }
+                        </script>
+                    </select></p>
+                <p><u>What do you like to do:</u><br>
+                Watch paint dry <input type="radio" id="paint" name="hobby" value="paint"><br>
+                Watch grass grow <input type="radio" id="grass" name="hobby" value="grass"><br>
+                Watch water evaporate <input type="radio" id="water" name="hobby" value="water"><br>
+                Bathe in the blood of my enemies <input type="radio" id="bath" name="hobby" value="bath"><br>
+                </p>
+                <p><u>Select all that apply:</u> <br>
+                I'm cool at home <input type="checkbox" id="home" value="1"><br>
+                I'm cool at school <input type="checkbox" id="school" value="2"><br>
+                I'm cool while sleeping <input type="checkbox" id="sleeping" value="3">
+                </p>
+                <p><input type="button" value="How Cool Am I" onClick="coolness()">&nbsp &nbsp &nbsp<input type="reset"></p>
+            </form>
+            <p id="output"></p>
+        </div>
+        <hr>
+    <p align="left"><a href="../index.html" id="goback">Go Back</a> &nbsp &nbsp &nbsp <a href="flowchart.html" target="_blank">Link to the Flowchart</a>
+</p>
+    </div>
+</body>
+</html>
