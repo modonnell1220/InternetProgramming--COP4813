@@ -1,0 +1,10 @@
+Create Table Memes
+(
+	ID INT(5) Not Null AUTO_INCREMENT,
+	MemeName varchar(50),
+	MemePath varchar(50),
+	Poster varchar(50),
+	Likes INT(10),
+	Dislikes INT(10), 
+	PRIMARY KEY(ID)
+);
